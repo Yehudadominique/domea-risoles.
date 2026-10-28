@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#173e2d">
+<meta name="description" content="Pesan Risol Rogout, Mayo Sosis, dan Beef dari DOMEA Risoles, Semarang.">
+<link rel="manifest" href="manifest.json">
+<title>DOMEA Risoles</title>
+<style>
+:root{--green:#173e2d;--green2:#24563e;--gold:#f3d58a;--cream:#fffaf0;--ink:#1c2b22;--muted:#68746b}
+*{box-sizing:border-box}body{margin:0;background:#f5f5ef;color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+header{background:linear-gradient(140deg,#102e21,#24563e);color:white;padding:28px 18px 30px;border-radius:0 0 26px 26px}
+.top{max-width:920px;margin:auto}.brand{font-size:12px;letter-spacing:4px;color:var(--gold);font-weight:800}.hero{display:flex;gap:14px;align-items:center;margin-top:12px}.hero h1{font-size:32px;line-height:1.05;margin:0}.hero p{margin:9px 0 0;color:#e0e9df;font-size:14px}.hero-icon{width:88px;height:88px;border-radius:22px;background:#f9e7b7;display:grid;place-items:center;font-size:45px;flex-shrink:0;box-shadow:0 8px 25px #0002}
+main{max-width:920px;margin:auto;padding:20px 16px 40px}.section-title{font-size:19px;margin:5px 0 13px}.products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.product{background:white;border:1px solid #e7e9e2;border-radius:18px;padding:14px;box-shadow:0 4px 14px #193b2410;display:flex;flex-direction:column;min-width:0}
+.food{height:90px;border-radius:13px;background:linear-gradient(145deg,#fff4d8,#f5d58b);display:grid;place-items:center;font-size:42px;margin-bottom:12px}
+.product h3{font-size:15px;margin:0 0 5px}.price{font-weight:850;color:var(--green);font-size:18px}.sub{color:var(--muted);font-size:12px;margin:5px 0 12px}
+button{font:inherit;cursor:pointer;border:0}.add{margin-top:auto;background:var(--green);color:white;border-radius:11px;padding:10px;font-weight:750}.add:active,.wa:active{transform:scale(.98)}
+.panel{background:white;border:1px solid #e7e9e2;border-radius:18px;padding:16px;margin-top:20px}.cartrow{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid #edf0e9}.cartrow:last-child{border-bottom:0}.qty{display:flex;align-items:center;gap:9px}.qty button{width:28px;height:28px;border-radius:9px;background:#edf3eb;color:var(--green);font-weight:900}.remove{background:transparent;color:#a33;font-size:12px}.total{display:flex;justify-content:space-between;gap:12px;font-size:18px;font-weight:850;padding:14px 0 5px}.wa{width:100%;background:#16834a;color:white;border-radius:13px;padding:14px;font-weight:800;margin-top:12px}.hint{font-size:12px;color:var(--muted);line-height:1.5}.field{width:100%;padding:12px;border:1px solid #dfe5da;border-radius:11px;margin:6px 0 12px;font:inherit}.info{display:grid;grid-template-columns:1fr 1fr;gap:12px}.infocard{background:#fff;border:1px solid #e7e9e2;border-radius:15px;padding:15px}.infocard b{display:block;margin-bottom:6px}.infocard p{margin:0;font-size:13px;line-height:1.55;color:var(--muted)}footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
+.empty{color:var(--muted);font-size:14px;padding:8px 0}
+@media(max-width:560px){.products{grid-template-columns:1fr}.product{display:grid;grid-template-columns:68px 1fr;gap:0 12px;padding:12px}.food{height:68px;grid-row:span 4;margin:0;font-size:32px}.product h3{align-self:end}.sub{margin:4px 0 7px}.add{grid-column:2;width:100%;padding:9px}.hero h1{font-size:28px}.hero-icon{width:72px;height:72px;font-size:36px}.info{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="top">
+<div class="brand">DOMEA • SEMARANG</div>
+<div class="hero"><div class="hero-icon" aria-hidden="true">🥟</div><div><h1>RISOLES<br>DOMEA</h1><p>Renyah di luar, lezat di setiap gigitan.</p></div></div>
+</div></header>
+<main>
+<section aria-labelledby="produk-title"><h2 class="section-title" id="produk-title">Pilih favoritmu</h2>
+<div class="products">
+<article class="product"><div class="food" aria-hidden="true">🥟</div><h3>Risol Rogout</h3><div class="price">Rp3.000</div><p class="sub">Gurih dan creamy.</p><button class="add" onclick="add(0)">＋ Tambah</button></article>
+<article class="product"><div class="food" aria-hidden="true">🌭</div><h3>Risol Mayo Sosis</h3><div class="price">Rp4.000</div><p class="sub">Sosis dan mayo yang nikmat.</p><button class="add" onclick="add(1)">＋ Tambah</button></article>
+<article class="product"><div class="food" aria-hidden="true">🍖</div><h3>Risol Beef</h3><div class="price">Rp5.000</div><p class="sub">Isian beef yang lezat.</p><button class="add" onclick="add(2)">＋ Tambah</button></article>
+</div></section>
+<section class="panel" aria-labelledby="cart-title"><h2 class="section-title" id="cart-title">🛒 Keranjang pesanan</h2><div id="cart"><div class="empty">Keranjang masih kosong. Tambahkan risoles favoritmu.</div></div>
+<label for="nama"><b>Nama pemesan (opsional)</b></label><input id="nama" class="field" placeholder="Nama Anda" autocomplete="name">
+<label for="catatan"><b>Catatan pesanan (opsional)</b></label><textarea id="catatan" class="field" rows="2" placeholder="Contoh: waktu pengambilan atau permintaan khusus"></textarea>
+<div class="hint">Pesanan akan dibuka di WhatsApp agar Anda bisa memeriksa dan mengirimkannya langsung.</div>
+<button class="wa" onclick="checkout()">Pesan melalui WhatsApp</button>
+</section>
+<section class="panel"><h2 class="section-title">📍 Informasi DOMEA</h2><div class="info">
+<div class="infocard"><b>Kontak pemesanan</b><p>087844610863</p><p><a href="https://wa.me/6287844610863" target="_blank" rel="noopener">Buka WhatsApp DOMEA ↗</a></p></div>
+<div class="infocard"><b>Alamat</b><p>Jalan Stonen Selatan III No. 26A, Bendan Ngisor, Gajahmungkur, Semarang.</p><p><a href="https://www.google.com/maps/search/?api=1&query=Jalan+Stonen+Selatan+III+No+26A+Bendan+Ngisor+Gajahmungkur+Semarang" target="_blank" rel="noopener">Cari di Google Maps ↗</a></p></div>
+</div></section>
+</main>
+<footer>© DOMEA Risoles • Semarang</footer>
+<script>
+const products=[{name:"Risol Rogout",price:3000},{name:"Risol Mayo Sosis",price:4000},{name:"Risol Beef",price:5000}];
+const qty=[0,0,0];
+const rupiah=n=>"Rp"+n.toLocaleString("id-ID");
+function add(i){qty[i]++;render()}
+function change(i,d){qty[i]=Math.max(0,qty[i]+d);render()}
+function render(){
+ const el=document.getElementById("cart");
+ const items=products.map((p,i)=>({...p,i,q:qty[i]})).filter(p=>p.q>0);
+ if(!items.length){el.innerHTML='<div class="empty">Keranjang masih kosong. Tambahkan risoles favoritmu.</div>';return}
+ let html=items.map(p=>`<div class="cartrow"><div><b>${p.name}</b><div class="hint">${rupiah(p.price)} / pcs</div></div><div class="qty"><button aria-label="Kurangi ${p.name}" onclick="change(${p.i},-1)">−</button><b>${p.q}</b><button aria-label="Tambah ${p.name}" onclick="change(${p.i},1)">+</button></div><b>${rupiah(p.price*p.q)}</b></div>`).join("");
+ const total=items.reduce((s,p)=>s+p.price*p.q,0);
+ html+=`<div class="total"><span>Total sementara</span><span>${rupiah(total)}</span></div><div class="hint">Belum termasuk ongkos kirim, jika ada.</div>`;
+ el.innerHTML=html;
+}
+function checkout(){
+ const items=products.map((p,i)=>({...p,q:qty[i]})).filter(p=>p.q>0);
+ if(!items.length){alert("Keranjang masih kosong. Tambahkan produk terlebih dahulu.");return}
+ const nama=document.getElementById("nama").value.trim();
+ const catatan=document.getElementById("catatan").value.trim();
+ const total=items.reduce((s,p)=>s+p.price*p.q,0);
+ let msg="Halo DOMEA, saya ingin memesan risoles:%0A";
+ msg="Halo DOMEA, saya ingin memesan risoles:\n";
+ items.forEach(p=>msg+=`• ${p.name} x ${p.q} = ${rupiah(p.price*p.q)}\n`);
+ msg+=`\nTotal sementara: ${rupiah(total)}\n`;
+ if(nama)msg+=`Nama: ${nama}\n`;
+ if(catatan)msg+=`Catatan: ${catatan}\n`;
+ msg+="\nMohon konfirmasi ketersediaan dan pengambilan/pengiriman. Terima kasih.";
+ window.open("https://wa.me/6287844610863?text="+encodeURIComponent(msg),"_blank","noopener");
+}
+if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}))}
+</script>
+</body>
+</html>
